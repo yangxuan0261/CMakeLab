@@ -1,1 +1,1 @@
-add_library(Tool02 library.cpp)
+add_library(tool02 library.cpp)
