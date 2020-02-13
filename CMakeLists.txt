@@ -20,11 +20,7 @@ add_executable(CMakeLab ${SOURCE_FILES})
 
 target_link_libraries(CMakeLab tool02)
 
-# 添加 预编译宏
-add_definitions(
-        -D CMAKE_INSTALL_PREFIX=/root/temp
-)
-
+# 安装
 install(TARGETS CMakeLab tool02
 RUNTIME DESTINATION bin
 LIBRARY DESTINATION lib
