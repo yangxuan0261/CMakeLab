@@ -14,9 +14,18 @@ file(GLOB_RECURSE SRC_aaa
 set(SOURCE_FILES main.cpp ${SRC_aaa})
 
 include_directories("${PROJECT_SOURCE_DIR}/tool02" "${PROJECT_SOURCE_DIR}")
-add_subdirectory(tool02)
+add_subdirectory(tool02) # 指定需要编译的子目录, 产生的中间文件默认目录名为目录名
 
 add_executable(CMakeLab ${SOURCE_FILES})
 
 target_link_libraries(CMakeLab tool02)
 
+# 添加 预编译宏
+add_definitions(
+        -D CMAKE_INSTALL_PREFIX=/root/temp
+)
+
+install(TARGETS CMakeLab tool02
+RUNTIME DESTINATION bin
+LIBRARY DESTINATION lib
+)
