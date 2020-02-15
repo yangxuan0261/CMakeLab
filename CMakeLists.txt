@@ -53,13 +53,13 @@ set(CPACK_SOURCE_IGNORE_FILES # 忽略文件
         ${PROJECT_SOURCE_DIR}/.gitignore
         ${PROJECT_SOURCE_DIR}/.vscode)
 
-# 打包源码
-#set(CPACK_PACKAGING_INSTALL_PREFIX "/opt/${PROJECT_NAME}") # 从发布包中安装时，文件将放在/opt/${PROJECT_NAME}目录下
+# 打包 源码
+#set(CPACK_PACKAGING_INSTALL_PREFIX "/opt/${PROJECT_NAME}") # 从发布包中安装 源码 时，文件将放在/opt/${PROJECT_NAME}目录下
 set(CPACK_SOURCE_GENERATOR "TGZ") # 打包文件 格式
 set(CPACK_SOURCE_PACKAGE_FILE_NAME ${PROJECT_NAME}-${PROJECT_VERSION_FULL}-src) # 打包文件 名称
 
-# 打包可执行文件
-set(CPACK_INSTALL_PREFIX "/opt/${PROJECT_NAME}") # 从发布包中安装时，文件将放在/opt/${PROJECT_NAME}目录下
+# 打包 可执行文件
+#set(CMAKE_INSTALL_PREFIX "/opt/${PROJECT_NAME}") # 从发布包中安装 可执行文件 时，文件将放在/opt/${PROJECT_NAME}目录下
 set(CPACK_GENERATOR "TGZ")
 set(CPACK_PACKAGE_FILE_NAME ${PROJECT_NAME}-${PROJECT_VERSION_FULL}-bin)
 
