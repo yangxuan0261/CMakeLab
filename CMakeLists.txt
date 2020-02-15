@@ -20,6 +20,11 @@ add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
 target_link_libraries(${PROJECT_NAME} tool02)
 
+# 添加 预编译宏
+add_definitions(
+        -D USE_FILTER
+)
+
 # 安装
 install(TARGETS ${PROJECT_NAME} tool02
         RUNTIME DESTINATION bin
