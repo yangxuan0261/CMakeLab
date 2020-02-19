@@ -3,6 +3,9 @@
 cmake_minimum_required(VERSION 3.15)
 project(CMakeLab)
 
+set (CMAKE_BUILD_TYPE "Release") # Release
+
+
 set(CMAKE_CXX_STANDARD 14)
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lmingw32") # 添加编译选项
 
@@ -41,9 +44,9 @@ include_directories(${INC_DIR}) # 相当于gcc/clang 中的-I(i的大写字母)�
 link_directories(${LINK_DIR}) # 相当于gcc 中的-L参数, 引入 库文件 目录
 
 # 生成 可执行文件
-add_executable(CMakeLab ${SOURCE_FILES})
+add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
-target_link_libraries(CMakeLab tool01) # 相当于gcc中的-l(小写的l)参数, 链接 库文件
+target_link_libraries(${PROJECT_NAME} tool01) # 相当于gcc中的-l(小写的l)参数, 链接 库文件
 
 # 添加 预编译宏
 add_definitions(
@@ -52,7 +55,7 @@ add_definitions(
 )
 
 set(p6 helloworld)
-message(STATUS "after bar p6=${p6}") # 输出日志
+message(STATUS "--- p6=${p6}") # 输出日志
 
 # 打包
 set(VERSION_MAJOR 1)
